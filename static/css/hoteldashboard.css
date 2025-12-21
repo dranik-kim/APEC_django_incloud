@@ -1,0 +1,16 @@
+/* Настройка шрифта Inter, который используется в Google по умолчанию */
+        :root {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Пользовательский синий цвет для заголовка */
+        .header-blue {
+            background-color: #0067c0; /* Похож на синий цвет бренда Hilton/облака */
+        }
+        /* Стилизация для скролла на мобильных устройствах */
+        .tab-scroller {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+        .tab-scroller::-webkit-scrollbar {
+            display: none; /* Chrome, Safari and Opera */
+        }

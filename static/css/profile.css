@@ -1,0 +1,337 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa; /* Светлый фон страницы */
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px; 
+    margin: 0 auto; /* ГЛАВНОЕ ИСПРАВЛЕНИЕ ДЛЯ ЦЕНТРИРОВАНИЯ */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- 2. Шапка (Header) --- */
+.header {
+    background-color: #2b70f0; /* Насыщенный синий */
+    color: white;
+    padding: 10px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Стиль для блока логотипа: теперь содержит только изображение */
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    /* Убраны flex и gap, так как остаётся только <img> */
+}
+
+/* НОВЫЙ СТИЛЬ для IMG логотипа */
+.logo-img {
+    height: 30px; /* Устанавливаем высоту логотипа */
+    width: auto; /* Сохраняем пропорции */
+    vertical-align: middle; /* Выравнивание по центру относительно текста */
+}
+/* Удалили .logo-icon, так как он больше не используется */
+
+
+.main-nav {
+    display: flex;
+    gap: 30px;
+    background-color: #4a86f7; /* Более светлый синий */
+    border-radius: 50px;
+    padding: 8px 15px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 50px;
+}
+
+.nav-item i {
+    margin-right: 5px;
+}
+
+.nav-item.active {
+    background-color: white;
+    color: #2b70f0;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-link.active {
+    font-weight: 500;
+    border-bottom: 2px solid white;
+    padding-bottom: 2px;
+}
+
+/* --- 3. Основной Контент (Grid Layout) --- */
+.profile-main {
+    padding: 30px 0;
+}
+
+.profile-grid {
+    display: grid;
+    /* Левая колонка 250px, правая занимает остальное */
+    grid-template-columns: 250px 1fr;
+    gap: 40px;
+}
+
+/* Левая навигация */
+.profile-nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-link {
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-link i {
+    color: #999;
+}
+
+.nav-link.active {
+    background-color: #f0f4ff; /* Светло-голубой */
+    color: #2b70f0;
+    border: 1px solid #c9d8ff;
+}
+
+.nav-link.active i {
+    color: #2b70f0;
+}
+
+/* Правая колонка контента */
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content-block {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.content-block h3 {
+    margin: 0 0 5px 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.content-block p {
+    margin: 0 0 20px 0;
+    color: #777;
+    font-size: 14px;
+}
+
+/* --- 4. Стили блоков --- */
+
+/* Блок Входа */
+.login-block {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.login-info {
+    max-width: 40%;
+}
+
+.social-login {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+}
+
+.social-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
+
+.social-btn i {
+    margin-right: 8px;
+}
+
+.google-btn {
+    background-color: white;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.facebook-btn {
+    background-color: #4267B2;
+    color: white;
+}
+
+.more-btn {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.register-link-group {
+    font-size: 12px;
+    color: #777;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Блок Недавние покупки (Формы) */
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    flex: 1;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.input-with-icon {
+    position: relative;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-with-icon .fa-angle-down {
+    color: #999;
+    margin-left: 10px;
+}
+
+.input-with-icon .info-icon {
+    position: absolute;
+    right: 5px;
+    top: -10px;
+    color: #2b70f0;
+    font-size: 14px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 2px;
+}
+
+/* Блок Тема оформления */
+.theme-settings {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.theme-title {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.theme-title i {
+    margin-right: 10px;
+    color: #f5c700;
+    font-size: 18px;
+}
+
+.theme-switcher {
+    background-color: #eee;
+    padding: 4px;
+    border-radius: 8px;
+    display: flex;
+}
+
+.theme-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    background: none;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.theme-btn.active {
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Блок Конфиденциальность и Документы */
+.privacy-docs {
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.section-group {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.setting-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+    color: #333;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.setting-link.danger {
+    color: #e53935;
+}
+
+.setting-link i {
+    color: #ccc;
+    font-size: 12px;
+}

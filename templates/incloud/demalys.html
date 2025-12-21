@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demalys - Обзор Путешествий</title>
+    <!-- Подключение Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Настройка шрифта Inter и кастомных цветов -->
+    <link rel="stylesheet" href="/static/css/demalys.css">
+   
+</head>
+<body class="min-h-screen">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- HEADER / NAVIGATION (Right Side) -->
+        <header class="flex justify-between items-center mb-10">
+            <div class="text-lg font-bold text-gray-800">
+                <span class="text-blue-600">demalys</span>
+                <img src="/static/img/Logo.png" alt="Logo" class="inline-block w-6 h-6 ml-1">
+            </div>
+            <nav class="flex space-x-2 p-2 bg-white rounded-full shadow-lg border border-gray-100">
+                <button class="nav-button nav-button-active flex items-center px-4 py-2 rounded-full text-sm">
+                    <img src="https://cdn-icons-png.flaticon.com/128/1243/1243428.png" alt="Путеводители" class="w-5 h-5 mr-1">
+                    Путеводители
+                </button>
+                <button class="nav-button flex items-center px-4 py-2 rounded-full text-sm">
+                    <img src="https://cdn-icons-png.flaticon.com/128/3625/3625060.png" alt="Советы" class="w-5 h-5 mr-1">
+                    Советы
+                </button>
+                <button class="nav-button flex items-center px-4 py-2 rounded-full text-sm">
+                    <img src="https://cdn-icons-png.flaticon.com/128/9750/9750936.png" alt="Опыт" class="w-5 h-5 mr-1">
+                    Опыт
+                <button class="nav-button flex items-center px-4 py-2 rounded-full text-sm">
+                   <img src="https://cdn-icons-png.flaticon.com/128/11272/11272844.png" alt="Подборки" class="w-5 h-5 mr-1">
+                    Подборки
+                </button>
+                <button class="nav-button flex items-center px-4 py-2 rounded-full text-sm">
+                    <img src="https://cdn-icons-png.flaticon.com/128/2618/2618630.png" alt="Инструкции" class="w-5 h-5 mr-1">
+                    Инструкции
+                </button>
+            </nav>
+        </header>
+
+<section class="mb-16">
+    <h2 class="text-3xl font-bold mb-6 text-gray-800">Популярное</h2>
+
+    <!-- ONE FRAME -->
+    <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6">
+        <div class="flex flex-col lg:flex-row gap-8">
+
+            <!-- LEFT BLOCK -->
+            <div class="lg:w-1/2">
+                <img
+                    src="https://i.pinimg.com/1200x/4d/d1/2e/4dd12ea2bf3edfae0cf13a5379dbb5b8.jpg"
+                    class="rounded-xl mb-4 w-full h-56 object-cover"
+                    alt=""
+                />
+
+                <span class="text-xs text-gray-500">Подборки</span>
+
+                <h3 class="text-xl font-extrabold mt-2 leading-tight">
+                    Безвизовые страны<br />
+                    для казахстанцев в 2025–2026 году
+                </h3>
+            </div>
+
+            <!-- RIGHT BLOCK -->
+            <div class="lg:w-1/2 flex flex-col gap-4">
+
+                <!-- CARD 1 -->
+                <div class="flex items-center justify-between gap-4">
+                    <div>
+                        <p class="text-xs text-blue-500 uppercase">Инструкции</p>
+                        <h4 class="text-sm font-medium">
+                            Как получить паспорт в Казахстане?
+                        </h4>
+                    </div>
+
+                    <img
+                        src="https://static.aviasales.com/psgr-v2/Passport_aaee369bbf.jpg?"
+                        class="w-20 h-20 rounded-xl object-cover"
+                    />
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="flex items-center justify-between gap-4">
+                    <div>
+                        <p class="text-xs text-blue-500 uppercase">Советы</p>
+                        <h4 class="text-sm font-medium">
+                            Как купить дешевые билеты в 2025 году?<br />
+                            Советы от ИнКлауд.
+                        </h4>
+                    </div>
+
+                    <img
+                        src="https://static.aviasales.com/psgr-v2/Ruchnaya_klad_c9ff097601.jpeg?"
+                        class="w-20 h-20 rounded-xl object-cover"
+                    />
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="flex items-center justify-between gap-4">
+                    <div>
+                        <p class="text-xs text-blue-500 uppercase">Инструкции</p>
+                        <h4 class="text-sm font-medium">
+                            Что такое ручная кладь, и можно ли провозить в ней фей, животных?
+                        </h4>
+                    </div>
+
+                    <img
+                        src="https://static.aviasales.com/psgr-v2/Chto_takoe_subsidirovannye_bilety_f68e2fabd1.png?"
+                        class="w-20 h-20 rounded-xl object-cover"
+                    />
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- EMAIL SUBSCRIPTION SECTION -->
+        <section class="mb-16">
+            <div class="p-10 rounded-2xl flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0" style="background-color: #cce0f5;">
+                <div class="md:w-1/2">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-2">Введите почту</h2>
+                    <p class="text-gray-600 mb-4">Оставьте почту, чтобы не пропустить.</p>
+                    
+                    <div class="relative">
+                        <input type="email" value="kakytoochi@gmail.com" class="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800" placeholder="Ваша электронная почта">
+                        <button class="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 rounded-full text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-150">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/3 flex justify-center">
+                    <!-- Heart hands emoji from the screenshot -->
+                    <div class="text-[120px] leading-none">
+                        <img src="https://cdn-user-icons.flaticon.com/215106/215106541/1765892096372.svg?token=exp=1765893032~hmac=e5160147c6a04dfadfeca5a60b0616c2" alt="Heart Hands Emoji" class="w-24 h-24 md:w-32 md:h-32">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MORE HELPFUL SECTION (The main grid) -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-10 text-gray-800">Больше полезного</h2>
+            
+            <div class="article-grid">
+
+                <!-- Article Card 1 -->
+                <div class="article-card">
+                    <img src="https://static.aviasales.com/psgr-v2/bukhara_8267ea412f.jpg?" alt="Путешествие в Узбекистан с семьей" class="article-image">
+                    <div class="p-4">
+                        <p class="card-category">Совет</p>
+                        <h3 class="card-title">Поездка, план и складной горшок: как мы съездили в Узбекистан с семьей</h3>
+                    </div>
+                </div>
+
+                <!-- Article Card 2 -->
+                <div class="article-card">
+                    <img src="https://static.aviasales.com/psgr-v2/IMG_9651_f43796a256.jpg?" alt="Рейс задержали" class="article-image">
+                    <div class="p-4">
+                        <p class="card-category">Инструкции</p>
+                        <h3 class="card-title">Рейс задержали? Рассказываем, как получить компенсацию от авиакомпании</h3>
+                    </div>
+                </div>
+
+                <!-- Article Card 3 -->
+                <div class="article-card">
+                    <img src="https://static.aviasales.com/psgr-v2/Biznes_zal_v_aeroportu_8280c74dea.png?" alt="Бизнес-зал в аэропорту" class="article-image">
+                    <div class="p-4">
+                        <p class="card-category">Инструкции</p>
+                        <h3 class="card-title">Бизнес-зал в аэропорту: все способы попасть туда бесплатно или за деньги</h3>
+                    </div>
+                </div>
+
+                <!-- Article Card 4 -->
+                <div class="article-card">
+                    <img src="https://static.aviasales.com/psgr-v2/IMG_4122_9ed1a49b32.PNG?" alt="Розетки" class="article-image">
+                    <div class="p-4">
+                        <p class="card-category">Инструкции</p>
+                        <h3 class="card-title">Какие типы розеток используют в разных странах мира?</h3>
+                    </div>
+                </div>
+
+                 <!-- Article Card 5 -->
+                <div class="article-card">
+                    <img src="https://static.aviasales.com/psgr-v2/Montenegro_32def0a63d.jpg?" alt="Черногория" class="article-image">
+                    <div class="p-4">
+                        <p class="card-category">Опыт</p>
+                        <h3 class="card-title">Как мы съездили в Черногорию с детьми и без турагентства</h3>
+                    </div>
+                </div>
+                
+                <!-- Article Card 6 -->
+                <div class="article-card">
+                    <img src="https://static.tildacdn.pro/tild6136-3234-4838-b835-363162623166/Depositphotos_47744323_l2015.jpg" alt="Алматы горы" class="article-image">
+                    <div class="p-4">
+                        <p class="card-category">Подборки</p>
+                        <h3 class="card-title">Куда сбежать из Алматы на один день: полный гайд по горам, озерам и водопадам</h3>
+                    </div>
+                </div>
+
+                <!-- Article Card 7 -->
+                <div class="article-card">
+                    <img src="https://static.aviasales.com/psgr-v2/Metro_22adda5e87.jpg?" alt="Метро Алматы" class="article-image">
+                    <div class="p-4">
+                        <p class="card-category">Инструкции</p>
+                        <h3 class="card-title">Метро Алматы: гайд для тех, кто не хочет стоять в пробках</h3>
+                    </div>
+                </div>
+
+                <!-- Article Card 8 -->
+                <div class="article-card">
+                    <img src="https://static.aviasales.com/psgr-v2/roaming_209e6a80ab.jpg?" alt="Роуминг или e-SIM" class="article-image">
+                    <div class="p-4">
+                        <p class="card-category">Инструкции</p>
+                        <h3 class="card-title">Роуминг или e-SIM: как не остаться без связи в поездке?</h3>
+                    </div>
+                </div>
+
+                <!-- Article Card 9 -->
+                <div class="article-card">
+                    <img src="https://finratings.kz/cache/imagine/1200/uploads/news/2025/09/25/da5cbb8ef2252a482bfbf648c09f29dd.webp" alt="Кайрат vs Реал" class="article-image">
+                    <div class="p-4">
+                        <p class="card-category">Советы</p>
+                        <h3 class="card-title">От «Кайрата» до «Реала»: как попасть на большой футбол и не остаться с носом</h3>
+                    </div>
+                </div>
+
+                <!-- Article Card 10 -->
+                <div class="article-card">
+                    <img src="https://static.aviasales.com/psgr-v2/japan_fc0f4afaa8.jpeg?" alt="Япония или Турция" class="article-image">
+                    <div class="p-4">
+                        <p class="card-category">Подборки</p>
+                        <h3 class="card-title">Япония вместо Турции? Разбираемся, куда казахстанцы летят этой осенью и почему</h3>
+                    </div>
+                </div>
+
+                <!-- Article Card 11 -->
+                <div class="article-card">
+                    <img src="https://static.aviasales.com/psgr-v2/Kazakh_food_1_4f293128d3.jpg?" alt="Робби Уильямс" class="article-image">
+                    <div class="p-4">
+                        <p class="card-category">Подборки</p>
+                        <h3 class="card-title">К нам летит Robbie Williams: что попробовать в Алматы, чтобы влюбиться в Казахстан</h3>
+                    </div>
+                </div>
+
+                <!-- Article Card 12 -->
+                <div class="article-card">
+                    <img src="https://static.aviasales.com/psgr-v2/wf_385ec27b94.jpeg?" alt="Водопады Казахстана" class="article-image">
+                    <div class="p-4">
+                        <p class="card-category">Подборки</p>
+                        <h3 class="card-title">Не только горы и степь: 5 водопадов Казахстана, ради которых стоит сорваться с места</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="mt-12 flex justify-center">
+                <button class="px-8 py-4 bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold rounded-xl transition duration-200 shadow-md">
+                    Еще статьи
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer-bg mt-16 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            
+            <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                <img src="/static/img/Logo.png" alt="InCloud Logo" class="h-6 w-6 rounded-md">
+                <div class="text-gray-700">
+                    <span class="font-bold text-lg">InCloud</span><br>
+                    <span class="text-sm">2016-2025</span>
+                </div>
+            </div>
+
+            <div class="text-gray-600 text-sm text-center>">
+                <p>ИнКлауд - Поддержка - RSS</p>
+                <p>Политика конфиденциальности</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

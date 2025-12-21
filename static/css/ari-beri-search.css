@@ -1,0 +1,27 @@
+body {
+    font-family: 'Inter', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+/* Стили для карточек отелей */
+.hotel-card {
+    height: 280px; 
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Стили для заголовка отеля внутри карточки */
+.hotel-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1F2937;
+    border-top: 1px solid #E5E7EB;
+}

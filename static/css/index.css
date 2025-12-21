@@ -1,0 +1,60 @@
+:root {
+    --primary-blue: #007bff;
+    --light-blue: #1e90ff;
+    --text-color: #333;
+    --light-gray: #f7f7f7;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    color: var(--text-color);
+    background-color: white;
+}
+
+.header-bg {
+    /* Mimics the bright blue gradient of the design */
+    background-image: linear-gradient(to bottom, #1e90ff, #007bff);
+}
+
+.search-tab-active {
+    background-color: white;
+    color: var(--primary-blue);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+/* Adjusted input group for clean border connection */
+.search-input-group {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    overflow: hidden;
+    flex-grow: 1;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem 1rem;
+    outline: none;
+    border: none;
+    font-size: 0.9rem;
+}
+
+.search-input:focus {
+    box-shadow: none;
+}
+/* Custom image placeholders to mimic the distinct image style */
+.card-img-placeholder {
+    min-height: 120px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px 8px 0 0;
+}
+/* Custom style to handle input borders on mobile (no border on last item before button) */
+.search-form-mobile-divider > *:not(:last-child):not(button) {
+    border-bottom: 1px solid #e5e7eb; /* Add bottom border for vertical separation on mobile */
+}

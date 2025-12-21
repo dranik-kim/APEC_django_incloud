@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F7F7F7; /* Светло-серый фон страницы */
+}
+/* Кастомный градиент для кнопки поиска, имитирующий цвета на скриншоте */
+.search-gradient {
+    background: linear-gradient(135deg, #FF6F61, #FFD700); /* Пример градиента */
+}
+/* Кастомные стили для карточек (для точного размера и тени) */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+@media (min-width: 640px) {
+    .card-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+}

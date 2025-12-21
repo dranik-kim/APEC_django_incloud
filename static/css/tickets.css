@@ -1,0 +1,97 @@
+
+        /* Стилизация для повторения пользовательского интерфейса */
+        :root {
+            --primary-blue: #0A69D6;
+            --secondary-blue: #D6E8FB;
+            --text-gray: #4B5563;
+            --bg-gray-light: #F9FAFB;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: white;
+        }
+
+        .custom-dropdown {
+            background-color: var(--bg-gray-light);
+            color: #1F2937;
+            border-radius: 9999px; /* rounded-full */
+            padding: 8px 16px; /* py-2 px-4 */
+            font-size: 0.875rem; /* text-sm */
+            font-weight: 500; /* medium */
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .custom-dropdown svg {
+            margin-left: 8px;
+            width: 12px;
+            height: 12px;
+            color: #9CA3AF;
+        }
+
+        .nav-icon-btn {
+            padding: 8px;
+            border-radius: 50%;
+            transition: background-color 0.15s;
+        }
+
+        /* Имитация иллюстрации отеля справа */
+        .hotel-illustration {
+            width: 120px;
+            height: 100px; 
+            background-color: #F8D88E; /* Светло-желтый/золотистый */
+            border-radius: 8px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 10px;
+        }
+
+        /* Крыша */
+        .hotel-illustration::before {
+            content: '';
+            position: absolute;
+            top: -30px; 
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background-color: #E1A935; /* Оранжево-коричневый */
+            /* Имитация наклонной крыши спереди */
+            clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+            z-index: 10;
+        }
+
+        /* Окна */
+        .hotel-illustration .window-grid {
+            position: absolute;
+            top: 25px; /* Под окнами */
+            left: 0;
+            right: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            padding: 0 10px;
+        }
+
+        .hotel-illustration .window {
+            background-color: #B4D7FA; /* Светло-голубые окна */
+            width: 100%;
+            height: 20px;
+            border-radius: 2px;
+        }
+        
+        /* Стили для иконок на синем фоне */
+        .header-icon-white {
+            color: white;
+            transition: background-color 0.15s;
+        }
+        .header-icon-white:hover {
+            background-color: rgba(255, 255, 255, 0.1); /* Светлая прозрачность при наведении */
+        }

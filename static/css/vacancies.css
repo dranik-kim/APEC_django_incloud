@@ -1,0 +1,50 @@
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    /* Устанавливаем основной фон для всего тела, включая футер */
+    background-color: #007bff; 
+}
+
+.main-header {
+background-color: #007bff; 
+color: white;
+padding: 15px 50px; 
+display: flex;
+justify-content: space-between; 
+align-items: center; 
+} 
+
+.logo {
+font-size: 30px; 
+font-weight: 700;
+}
+
+/* Контейнер навигации (для управления отступами между ссылками) */
+.main-nav {
+display: flex;
+gap: 20px; 
+}
+/* Стиль для активной ссылки в шапке */
+.nav-link {
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+}
+
+/* Общий стиль для элементов списка вакансий */
+.job-item {
+    border-bottom: 1px solid #E5E7EB;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+.job-item:hover {
+    background-color: #F3F4F6;
+}
+.job-item:last-child {
+    border-bottom: none;
+}

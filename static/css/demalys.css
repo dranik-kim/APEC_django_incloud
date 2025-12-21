@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f7f7f7; /* Светло-серый фон страницы */
+}
+
+.nav-button {
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    color: #4a4a4a;
+    transition: all 0.2s;
+}
+
+.nav-button-active {
+    background-color: #e5f2ff; /* Светло-голубой для активной кнопки */
+    border-color: #3b82f6;
+    color: #1e40af; /* Темно-синий текст */
+    font-weight: 600;
+}
+
+.card-category {
+    font-size: 0.75rem; /* text-xs */
+    color: #7a7a7a;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.card-title {
+    font-size: 1.125rem; /* text-lg */
+    line-height: 1.5rem; /* leading-tight */
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+.footer-bg {
+    background-color: #e6e6e6; /* Серый фон футера */
+}
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px; /* Большое расстояние между карточками */
+}
+
+.article-card {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+.article-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.article-image {
+    width: 100%;
+    height: 250px; /* Фиксированная высота для всех изображений */
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+@media (max-width: 768px) {
+    .article-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
