@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/notification.css">
+    <title>Настройки Уведомлений - InCloud</title>
+    <!-- Подключение Tailwind CSS для современных стилей -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Подключение Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <!-- Обновленный код для использования ссылки на изображение вместо плейсхолдера -->
+                <a href="index.html" class="logo">
+                    <img 
+                        src="/static/img/Logo.png" 
+                        onerror="this.onerror=null;this.src='/static/img/Logo.png';" 
+                        alt="InCloud Logo" 
+                        class="logo-img"
+                    >
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="tickets.html" class="nav-item"><i class="fas fa-plane"></i> Авиабилеты</a>
+                <a href="index.html" class="nav-item"><i class="fas fa-hotel"></i> Отели</a>
+                <a href="ari-beri.html" class="nav-item"><i class="fas fa-route"></i> Ары-берІ</a> 
+                <a href="favorites1.html" class="nav-item"><i class="fas fa-heart"></i> Избранное</a>
+                <a href="notification.html" class="nav-item"><i class="fas fa-fire"></i> Горящие цены</a>
+            </nav>
+            <div class="user-info">
+                <div class="profile">
+                    <div class="profile-avatar"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUSExMWFhUVFxYVFxUXFRUVFxcVFxYXFhUWFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGhAQGy0dICUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIARMAtwMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAADAAIEBQYHAQj/xAA9EAACAQIEBAQEAggFBQEAAAABAgADEQQSITEFBkFREyJhcTKBkbGhwQcUQlJi0eHwI4KisvEVM0NyksL/xAAZAQADAQEBAAAAAAAAAAAAAAAAAQIDBAX/xAAkEQACAgICAQUBAQEAAAAAAAAAAQIRAyESQTEEIjJRYROBcf/aAAwDAQACEQMRAD8A5xiaGSFwVPNJHHiAQoO0iYJtYpRqVGSdxskvQ1lbiaesvsQ4ygCVVe0uSomDbK9RDKI5VhQsxbNQJMZePeeIsYCSS6VW0GiiNJtJasRd4DjFRNM1x2Mk4niLONTM4KsOmIk8RhGwjO2gveazgvLNWwJbL8rxvK9JWYEzpeEVQtjI+Wh0YnF4GrSW+bMPTT8JHw2dxvpLnmbiCJdb3vM3wriALXv8uky4Kxk5eDXN7mSXwll2vJwxykKNPWTWZSuwlcK8C0zl3HV8+mkgUTYzQ800AH0metLg7WxFrhyCJBx6WN4/Dsek9r0iw1gnToVBuE4qKH4LgQfiW8UJYOTsP6UZmsxJJMSPaeRpnQMknEtBM14liYwsVHimHSBRbybh8PJYMCaMS0LScaVp4y30G8nkBCqaSMzTQUODFt4V+XSNRG3StiTRmYagtzNvgeWUy3YXkPi3BERcyi1ukjmmVRH4PjjS13EvzzgtrC4MyVKkTtNPwDlYP5nF/SRGLbG3RTcT4gaxvI+HJU3E6LU5VokWC2+8ynGeG+E1o8mNxVkqVgF4kbWMT8ce1gZXVIko3mdlUeVq5qNdjJvCuGeK4UDc2kQYY3ms5Kw/+Ms0x7aRMjUcO5DpBRprbeMxvJSLrb5zo2GTyie4ikCDpOuo34J4aOOVuEClsIpdc2YpaNS3eKU2loxOHLPDFC0qcxOkaqSVhOHs5ngAlpw7Fqu8zlJ9Ah1PgmXUmOFECScVxdSLCVxxVzMrkwPK51iwTgOCZ6GBM8rU5cWSzTYSsIeriwotpMfSxRBteTKZqVCAoLE6C2upjm2KMaL3/r5TSwIlbxPiZqaW0l7wbkDEVSC40b1KkDXWx1vtvpqe2umofo8CgK197ZvKWJIvfrYDyjS+oO15nwfRrTObcOAJHedB4NXygCP4ryIaQz01Jtcn9on1uCAvsF+sp6FQrofb1jTcXslo0+K4goHrMFzPxHO201KAMLSg4/wxTqsucnJE1WzHPV1knB17byNiKBBIjqCzNxVFJltlubiark+qvirMhSpkTQcrG1UXMrE6kgktHccOfKISQ+F1cyD2kydb8jXgy/MHKy13zmKaiKFkfzR8g3hUeRo9TMmUSM8cGgAY0vFQ0iQ1SeK0AGjwYqBk2lUjqtUz3hfD6lbN4diVF7XsT7es1HCcHRwa+PiFz1QCy02uAnS5HU9v7vnKkOMHIjcv8nVa5zVGWnTHxMx1A7Adz6/SdV5R4fhFPh0XUsgBOXTQ9b9bzjfMPNb4oBQGpqL6LUbKQf4RYfW885Qq4yjVz4cMb/EOjC+oPfrK49s1SS0juPMPH6eBfNVfysNCeh9B1h+XOb8JitEqqX/dNwSfS+85RzvRxmMKsyMFVdAddeusweI4bWRvhbTW4vpb16SovfkcouvB9bETE858prUU1qKnOB8CsFzexIOvaYX9G36RaqEYTEs... <truncated>
+                    <span>Профиль</span>
+                </div>
+                <div class="icons">
+                    <i class="fas fa-globe-americas"></i>
+                    <a href="notification.html"><i class="fas fa-bell"></i></a>
+                    <a href="support.html"><i class="fas fa-question-circle"></i></a>
+                    <span>KZT/RU</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <aside class="sidebar">
+            <a href="profile.html" class="sidebar-item">
+                <i class="fas fa-cog"></i>
+                <span class="text">Настройки</span>
+            </a>
+            <a href="notification.html" class="sidebar-item active">
+                <i class="fas fa-bell"></i>
+                <span class="text">Уведомления</span>
+            </a>
+        </aside>
+
+        <section class="content">
+            <h1 class="page-title">Уведомления</h1>
+
+            <div class="notification-card">
+                <h2 class="card-title">Цены в избранном</h2>
+                
+                <div class="notification-setting">
+                    <span class="setting-text">Письма на почту</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="notification-setting">
+                    <span class="setting-text">Уведомления в приложении</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                
+                <p class="card-hint">Войдите в профиль в приложении inCloud таким же способом, что и на сайте</p>
+            </div>
+
+            <div class="notification-card">
+                <h2 class="card-title">Рассылка для путешественников</h2>
+                <p class="card-description">Дешевые билеты из вашего города, розыгрыши путешествий и советы на дорожку</p>
+                
+                <div class="notification-setting">
+                    <span class="setting-text">Письма на почту</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="notification-setting">
+                    <span class="setting-text">Уведомления в приложении</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                
+                <p class="card-hint">Войдите в профиль в приложении inCloud таким же способом, что и на сайте</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/profile.css">
+    <title>InCloud - Профиль</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-content">
+            <!-- Added link to logo -->
+            <a href="index.html" class="logo">
+                <img 
+                    src="/static/img/Logo.png" 
+                    alt="iCloud Logo" 
+                    class="logo-img"
+                    onerror="this.onerror=null; this.src='C:\Users\elmir\Downloads\Frame 5.png';" 
+                >
+            </a>
+
+            <!-- Updated navigation links -->
+            <nav class="main-nav">
+                <a href="index.html" class="nav-item"><i class="fas fa-hotel"></i> Отели</a>
+                <a href="ari-beri.html" class="nav-item"><i class="fas fa-plane"></i> Ары-бері</a>
+                <a href="favorites1.html" class="nav-item"><i class="fas fa-heart"></i> Избранное</a>
+                <a href="tickets.html" class="nav-item"><i class="fas fa-fire"></i> Горящие цены</a>
+            </nav>
+            <div class="user-info">
+                <a href="profile.html" class="user-link active">Профиль</a>
+                <a href="#" class="lang-link">КК/RU</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="profile-main">
+        <div class="container"> 
+            <div class="profile-grid">
+                
+                <aside class="profile-nav-menu">
+                    <!-- Updated nav links -->
+                    <a href="profile.html" class="nav-link active">
+                        <i class="fas fa-cog"></i> Настройки
+                    </a>
+                    <a href="notification.html" class="nav-link">
+                        <i class="fas fa-bell"></i> Уведомления
+                    </a>
+                </aside>
+
+                <section class="profile-content">
+
+                    <div class="content-block login-block">
+                        <div class="login-info">
+                            <h3>Войдите в профиль</h3>
+                            <p>Чтобы получить доступ к заказам, избранному и документам</p>
+                        </div>
+                        <div class="social-login">
+                            <button class="social-btn google-btn"><i class="fab fa-google"></i> Войти через Google</button>
+                            <button class="social-btn facebook-btn"><i class="fab fa-facebook"></i> Facebook</button>
+                            <button class="social-btn more-btn" onclick="window.location.href='login.html'"><i class="fas fa-plus"></i> Еще 4 способа</button>
+                            <div class="register-link-group">
+                                <input type="checkbox" id="subscribe-news">
+                                <label for="subscribe-news">Подписка на рассылку iCloud</label>
+                                <a href="#">Условия подписки</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-block recent-purchases">
+                        <h3>Недавние покупки</h3>
+                        <p>Нужны для отображения подходящих билетов и правил въезда в страну</p>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="country">Страна</label>
+                                <div class="input-with-icon">
+                                    <span class="input-value">Казахстан</span>
+                                    <i class="fas fa-angle-down"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="citizenship">Гражданство</label>
+                                <div class="input-with-icon">
+                                    <span class="input-value">Казахстан</span>
+                                    <i class="fas fa-angle-down"></i>
+                                    <i class="fas fa-info-circle info-icon"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="currency">Валюта</label>
+                                <div class="input-with-icon">
+                                    <span class="input-value">Казахстанский тенге</span>
+                                    <i class="fas fa-angle-down"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="city">Город проживания</label>
+                                <div class="input-with-icon">
+                                    <span class="input-value"></span>
+                                    <i class="fas fa-angle-down"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-block theme-settings">
+                        <div class="theme-title">
+                            <i class="fas fa-sun"></i> <span>Тема оформления</span>
+                        </div>
+                        <div class="theme-switcher">
+                            <button class="theme-btn active">Светлая</button>
+                            <button class="theme-btn">Темная</button>
+                        </div>
+                    </div>
+
+                    <div class="privacy-docs">
+                        <div class="section-group">
+                            <h4 class="section-heading">Конфиденциальность</h4>
+                            <div class="section-description">Данные</div>
+                            <a href="support.html" class="setting-link">
+                                Отчет с моими данными <i class="fas fa-chevron-right"></i>
+                            </a>
+                            <a href="#" class="setting-link danger">
+                                Удалить профиль <i class="fas fa-chevron-right"></i>
+                            </a>
+                        </div>
+
+                        <div class="section-group">
+                            <h4 class="section-heading">Документы</h4>
+                            <a href="support.html" class="setting-link">
+                                Политика конфиденциальности <i class="fas fa-chevron-right"></i>
+                            </a>
+                            <a href="support.html" class="setting-link">
+                                Лицензионное соглашение <i class="fas fa-chevron-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

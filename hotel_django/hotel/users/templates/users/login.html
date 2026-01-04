@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InCloud - Вход</title>
+    <link rel="stylesheet" href="/static/css/account.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <!-- Added home link to logo -->
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <h1 class="logo">InCloud</h1>
+            </a>
+            <p class="subtitle">
+                Впервые посещаете сайт? 
+                <a href="signup.html" class="link">Зарегистрируйтесь бесплатно</a>
+            </p>
+            
+            <form id="loginForm" class="form">
+                <input type="text" class="input" placeholder="Юзернейм" required>
+                <input type="password" class="input" placeholder="Пароль" required>
+                <button type="submit" class="button" onclick="window.location.href='index.html'; return false;">Войти</button>
+            </form>
+            
+            <a href="forgot-password.html" class="forgot-link">Забыли пароль?</a>
+            
+            <div class="footer">
+                Продолжая, вы соглашаетесь на все правила 
+                <a href="support.html" class="link">Политики</a> и 
+                <a href="support.html" class="link">Безопасности</a>
+            </div>
+        </div>
+    </div>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

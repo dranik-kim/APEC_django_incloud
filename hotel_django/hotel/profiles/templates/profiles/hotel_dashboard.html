@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoubleTree by Hilton Almaty</title>
+    <!-- Загрузка Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/static/css/hoteldashboard.css">
+    
+</head>
+<body class="bg-gray-50">
+    <!-- Синяя верхняя панель (Header) -->
+    <header class="header-blue text-white shadow-lg sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
+            
+            <!-- Левая часть: Стрелка "Назад" и Логотип INCloud -->
+            <div class="flex items-center space-x-2">
+                <!-- Updated back button to navigate to search page -->
+                <button aria-label="Назад" class="p-1 rounded-full hover:bg-blue-700 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-white" onclick="window.location.href='ari-beri-search.html'">
+                    <!-- Heroicon: Arrow Left -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                    </svg>
+                </button>
+                
+                <!-- Added link to logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <img src="/static/img/Logo.png" 
+                         alt="INCloud Logo" 
+                         class="h-6 object-contain"
+                         onerror="this.onerror=null; this.src='/static/img/Logo.png'">
+                </a>
+            </div>
+            
+            <!-- Профиль -->
+            <div class="flex items-center space-x-2 cursor-pointer hover:bg-blue-600 p-1 rounded-full transition-colors duration-150" onclick="window.location.href='profile.html'">
+                <img src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?cs=srgb&dl=pexels-creationhill-1681010.jpg&fm=jpg" alt="Профиль" class="rounded-full ring-2 ring-white w-8 h-8 object-cover">
+                <span class="hidden sm:inline font-medium">Профиль</span>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Основной контент -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="flex flex-col lg:flex-row gap-8">
+            
+            <!-- Левая колонка (Контент вкладок) -->
+            <div class="lg:w-2/3 space-y-6">
+                
+                <!-- Блок с изображением и рейтингом (Постоянный) -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <img src="https://doubletree-by-hilton-almaty.almaty-hotel.com/data/Photos/OriginalPhoto/9292/929280/929280883/almaty-doubletree-by-hilton-photo-26.JPEG" 
+                        alt="Интерьер номера отеля DoubleTree by Hilton Almaty" 
+                        class="w-full h-auto object-cover max-h-[400px]">
+                </div>
+
+                <!-- Блок заголовка, рейтинга и вкладок (Постоянный) -->
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="flex justify-between items-center">
+                        <h1 class="text-3xl font-extrabold text-gray-900 leading-tight">DoubleTree by Hilton Almaty</h1>
+                        <div class="flex items-center space-x-1 bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">
+                            <span>3.43</span>
+                            <!-- Звезда -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                                <path fill-rule="evenodd" d="M10.868 2.884c.321-.745 1.48-.745 1.802 0l1.925 4.439 4.504.434c.732.07.974.996.43 1.455l-3.377 2.983 1.006 4.636c.154.71-.627 1.258-1.238.925l-3.963-2.368-3.963 2.368c-.611.333-1.392-.215-1.238-.925l1.006-4.636-3.377-2.983c-.544-.459-.302-1.385.43-1.455l4.504-.434L10.868 2.884z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <!-- Теги-фильтры -->
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-sm rounded-full font-medium bg-yellow-100 text-yellow-800">люкс-качество</span>
+                        <span class="px-3 py-1 text-sm rounded-full font-medium bg-blue-100 text-blue-800">вежливые сотрудники</span>
+                        <span class="px-3 py-1 text-sm rounded-full font-medium bg-gray-200 text-gray-700">без животных</span>
+                        <span class="px-3 py-1 text-sm rounded-full font-medium bg-red-100 text-red-800">фуршет</span>
+                        <span class="px-3 py-1 text-sm rounded-full font-medium bg-sky-100 text-sky-800">супермаркеты рядом</span>
+                        <span class="px-3 py-1 text-sm rounded-full font-medium bg-indigo-100 text-indigo-800">флагманские магазины</span>
+                    </div>
+
+                    <!-- Навигационные вкладки -->
+                    <!-- Добавлен overflow-x-auto для прокрутки на мобильных устройствах -->
+                    <div class="mt-6 border-b border-gray-200">
+                        <nav class="-mb-px flex space-x-8 tab-scroller overflow-x-auto" aria-label="Tabs">
+                            <a href="#" data-tab="about" class="tab-link border-b-2 border-blue-600 text-blue-600 whitespace-nowrap py-4 px-1 text-sm font-medium" aria-current="page">Об отеле</a>
+                            <a href="#" data-tab="book" class="tab-link border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 text-sm font-medium">Забронировать</a>
+                            <a href="#" data-tab="prices" class="tab-link border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 text-sm font-medium">Цены</a>
+                            <a href="#" data-tab="comments" class="tab-link border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-700 whitespace-nowrap py-4 px-1 text-sm font-medium">Комментарии</a>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Контент вкладок (Динамически переключаемый блок) -->
+                <!-- 1. Контент вкладки "Об отеле" (по умолчанию активен) -->
+                <div id="tab-about" data-tab-content class="bg-white p-6 rounded-xl shadow-md transition-opacity duration-300">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4">Подробное описание</h2>
+                    <div class="text-gray-700 space-y-4">
+                        <p><strong>DoubleTree by Hilton Almaty</strong> — современный отель международного уровня, расположенный в деловом центре города. Гостям предлагаются просторные номера с продуманным оснащением, зона для отдыха и рабочее пространство, что делает отель удобным как для деловых поездок, так и для туристических визитов.</p>
+                        
+                        <p class="font-semibold text-gray-900">Инфраструктура включает:</p>
+                        <ul class="list-disc list-inside space-y-1 ml-4">
+                            <li>Фитнес-центр,</li>
+                            <li>спа-комплекс,</li>
+                            <li>и несколько ресторанов с разнообразной кухней.</li>
+                        </ul>
+                        <p>Особое внимание уделено сервису: персонал работает оперативно и поддерживает высокий стандарт гостеприимства.</p>
+                        <p class="text-xs text-gray-400">Гарантия: идеальное расположение и высокое качество обслуживания.</p>
+                    </div>
+                </div>
+
+                <!-- 2. Контент вкладки "Забронировать" (скрыт по умолчанию) -->
+                <div id="tab-book" data-tab-content class="hidden bg-white p-6 rounded-xl shadow-md transition-opacity duration-300">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4">Бронирование номера</h2>
+                    
+                    <!-- Секция контактов для бронирования из изображения -->
+                    <div class="border-b pb-4 mb-4">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">Хотите забронировать номер?</h3>
+                        <div class="flex items-center space-x-4">
+                            <a href="tel:+77771402702" class="flex-grow py-3 px-4 bg-blue-600 text-white font-extrabold text-lg rounded-xl shadow-md hover:bg-blue-700 transition-colors text-center">
+                                +7 777 140 27 02
+                            </a>
+                            <button class="py-3 px-4 bg-orange-500 text-white font-bold rounded-xl shadow-md hover:bg-orange-600 transition-colors">
+                                Позвонить
+                            </button>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-2">Аделя - Front Desk Администратор</p>
+                        
+                        <p class="mt-4 text-gray-700">Или можете написать нам на Instagram</p>
+                        <div class="flex items-center space-x-4 mt-2">
+                            <span class="text-blue-500 font-semibold cursor-pointer">@doubletreebyhiltonalmaty</span>
+                            <button class="py-1 px-4 bg-green-500 text-white text-sm font-bold rounded-xl shadow-md hover:bg-green-600 transition-colors">
+                                Открыть
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Секция специального предложения из изображения -->
+                    <div class="bg-indigo-50 p-4 rounded-lg border border-indigo-200">
+                        <p class="font-semibold text-indigo-800">Для тех, кто бронирует через INCloud, действует специальное предложение:</p>
+                        <p class="text-sm text-indigo-700 mt-2">Скидка 15% на все номера категории Suite и бесплатный доступ в спа-комплекс.</p>
+                        <button class="mt-3 py-2 px-4 bg-indigo-500 text-white font-bold rounded-lg shadow-md hover:bg-indigo-600 transition-colors">
+                            Воспользоваться
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 3. Контент вкладки "Цены" (скрыт по умолчанию) -->
+                <div id="tab-prices" data-tab-content class="hidden bg-white p-6 rounded-xl shadow-md transition-opacity duration-300">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4">Тарифы и категории номеров</h2>
+                    
+                    <div class="space-y-4">
+                        <div class="border p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                            <h3 class="font-bold text-lg text-gray-900">Стандартный номер (King/Twin)</h3>
+                            <p class="text-sm text-gray-600">Завтрак включен, бесплатный Wi-Fi.</p>
+                            <div class="flex justify-between items-center mt-2">
+                                <span class="text-2xl font-extrabold text-blue-600">85 000 KZT</span>
+                                <button class="py-2 px-4 bg-gray-200 text-gray-800 font-semibold rounded-lg hover:bg-gray-300 transition-colors">Выбрать</button>
+                            </div>
+                        </div>
+
+                        <div class="border p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow bg-green-50 border-green-200">
+                            <h3 class="font-bold text-lg text-gray-900">Бизнес-люкс (Suite)</h3>
+                            <p class="text-sm text-gray-600">Привилегии Executive Lounge, джакузи, трехразовое питание.</p>
+                            <div class="flex justify-between items-center mt-2">
+                                <span class="text-2xl font-extrabold text-blue-600">179 990 KZT</span>
+                                <button class="py-2 px-4 bg-green-500 text-white font-bold rounded-lg hover:bg-green-600 transition-colors">Забронировать</button>
+                            </div>
+                        </div>
+
+                        <div class="border p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                            <h3 class="font-bold text-lg text-gray-900">Представительский номер (Executive)</h3>
+                            <p class="text-sm text-gray-600">Вид на горы, отдельная рабочая зона, доступ в Executive Lounge.</p>
+                            <div class="flex justify-between items-center mt-2">
+                                <span class="text-2xl font-extrabold text-blue-600">120 000 KZT</span>
+                                <button class="py-2 px-4 bg-gray-200 text-gray-800 font-semibold rounded-lg hover:bg-gray-300 transition-colors">Выбрать</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Контент вкладки "Комментарии" (скрыт по умолчанию) -->
+                <div id="tab-comments" data-tab-content class="hidden bg-white p-6 rounded-xl shadow-md transition-opacity duration-300">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4">Отзывы гостей (470)</h2>
+                    
+                    <!-- Блок для оставления комментария из изображения -->
+                    <div class="border-b pb-6 mb-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">Посетители? Расскажите другим о ваших ощущениях</h3>
+                        <textarea class="w-full h-24 p-3 border border-gray-300 rounded-lg resize-none focus:ring-blue-500 focus:border-blue-500" placeholder="Чувствуете себя отдохнувшими?"></textarea>
+                        
+                        <div class="flex justify-between items-center mt-3">
+                            <!-- Звезды рейтинга (просто для визуализации) -->
+                            <div class="flex text-gray-300 space-x-1">
+                                <svg class="w-8 h-8 fill-current cursor-pointer hover:text-yellow-400 transition-colors" data-star="1" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26l6.91 1.01l-5 4.88l1.18 6.88L12 18l-6.18 3.24l1.18-6.88l-5-4.88l6.91-1.01L12 2z"/></svg>
+                                <svg class="w-8 h-8 fill-current cursor-pointer hover:text-yellow-400 transition-colors" data-star="2" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26l6.91 1.01l-5 4.88l1.18 6.88L12 18l-6.18 3.24l1.18-6.88l-5-4.88l6.91-1.01L12 2z"/></svg>
+                                <svg class="w-8 h-8 fill-current cursor-pointer hover:text-yellow-400 transition-colors" data-star="3" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26l6.91 1.01l-5 4.88l1.18 6.88L12 18l-6.18 3.24l1.18-6.88l-5-4.88l6.91-1.01L12 2z"/></svg>
+                                <svg class="w-8 h-8 fill-current cursor-pointer hover:text-yellow-400 transition-colors" data-star="4" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26l6.91 1.01l-5 4.88l1.18 6.88L12 18l-6.18 3.24l1.18-6.88l-5-4.88l6.91-1.01L12 2z"/></svg>
+                                <svg class="w-8 h-8 fill-current cursor-pointer hover:text-yellow-400 transition-colors" data-star="5" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26l6.91 1.01l-5 4.88l1.18 6.88L12 18l-6.18 3.24l1.18-6.88l-5-4.88l6.91-1.01L12 2z"/></svg>
+                            </div>
+                            <button class="py-2 px-4 bg-blue-600 text-white font-bold rounded-lg shadow-md hover:bg-blue-700 transition-colors">Отправить</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Список существующих комментариев -->
+                    <div class="space-y-4">
+                        <div class="p-4 border border-gray-100 rounded-lg bg-white shadow-sm">
+                            <div class="flex items-center space-x-3 mb-2">
+                                <span class="font-bold text-gray-800">Тетраборат Натрия</span>
+                                <div class="flex text-yellow-400 text-sm">
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26l6.91 1.01l-5 4.88l1.18 6.88L12 18l-6.18 3.24l1.18-6.88l-5-4.88l6.91-1.01L12 2z"/></svg>
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26l6.91 1.01l-5 4.88l1.18 6.88L12 18l-6.18 3.24l1.18-6.88l-5-4.88l6.91-1.01L12 2z"/></svg>
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26l6.91 1.01l-5 4.88l1.18 6.88L12 18l-6.18 3.24l1.18-6.88l-5-4.88l6.91-1.01L12 2z"/></svg>
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26l6.91 1.01l-5 4.88l1.18 6.88L12 18l-6.18 3.24l1.18-6.88l-5-4.88l6.91-1.01L12 2z"/></svg>
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26l6.91 1.01l-5 4.88l1.18 6.88L12 18l-6.18 3.24l1.18-6.88l-5-4.88l6.91-1.01L12 2z"/></svg>
+                                </div>
+                                <span class="text-xs text-gray-400">01.09.2025</span>
+                            </div>
+                            <p class="text-gray-700">Отель превзошел все ожидания! Номер просторный, чистый, а персонал невероятно вежливый. Завтраки — настоящий фуршет. Расположение отличное, все магазины рядом. Вернемся сюда снова!</p>
+                        </div>
+                        <div class="p-4 border border-gray-100 rounded-lg bg-white shadow-sm">
+                            <div class="flex items-center space-x-3 mb-2">
+                                <span class="font-bold text-gray-800">Полина И.</span>
+                                <div class="flex text-yellow-400 text-sm">
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26l6.91 1.01l-5 4.88l1.18 6.88L12 18l-6.18 3.24l1.18-6.88l-5-4.88l6.91-1.01L12 2z"/></svg>
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26l6.91 1.01l-5 4.88l1.18 6.88L12 18l-6.18 3.24l1.18-6.88l-5-4.88l6.91-1.01L12 2z"/></svg>
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26l6.91 1.01l-5 4.88l1.18 6.88L12 18l-6.18 3.24l1.18-6.88l-5-4.88l6.91-1.01L12 2z"/></svg>
+                                    <svg class="w-4 h-4 fill-current text-gray-300" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26l6.91 1.01l-5 4.88l1.18 6.88L12 18l-6.18 3.24l1.18-6.88l-5-4.88l6.91-1.01L12 2z"/></svg>
+                                    <svg class="w-4 h-4 fill-current text-gray-300" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26l6.91 1.01l-5 4.88l1.18 6.88L12 18l-6.18 3.24l1.18-6.88l-5-4.88l6.91-1.01L12 2z"/></svg>
+                                </div>
+                                <span class="text-xs text-gray-400">15.08.2025</span>
+                            </div>
+                            <p class="text-gray-700">Очень дорого, но качество соответствует. Хотелось бы, чтобы барные напитки были включены не только в люкс. В целом, рекомендую для деловых поездок.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Правая колонка (Бронирование и Рекомендации) - ОСТАЛАСЬ СТАТИЧНОЙ -->
+            <div class="lg:w-1/3 space-y-8">
+                
+                <!-- Блок бронирования (Оставлен как быстрая карточка цены) -->
+                <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200 sticky top-20">
+                    <div class="text-4xl font-extrabold text-gray-900">179 990</div>
+                    <div class="text-base text-gray-500 mt-1">В СУТКИ (Бизнес-люкс)</div>
+                    
+                    <div class="mt-4 text-gray-700">
+                        <p class="font-semibold mb-2">В эту стоимость входит:</p>
+                        <ul class="list-disc list-inside space-y-1 ml-4 text-sm">
+                            <li>Трехразовое питание</li>
+                            <li>Клининг-услуги</li>
+                            <li>Удобства в виде телевизора, джакузи, средств гигиены</li>
+                            <li>Барные напитки</li>
+                        </ul>
+                    </div>
+
+                    <button data-tab-go="book" class="w-full mt-6 py-3 px-4 bg-orange-500 text-white font-bold rounded-xl shadow-lg hover:bg-orange-600 transition-colors duration-150">
+                        Быстрое бронирование
+                    </button>
+                </div>
+
+                <!-- Блок рекомендаций "Вам может также понравиться" -->
+                <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4">Вам может также понравиться:</h2>
+
+                    <!-- Карточка рекомендации -->
+                    <div class="border rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer">
+                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/partner/bookingcom/photo-o/29/48/be/61/caption.jpg?w=500&h=-1&s=1" 
+                            alt="Отель DIAR Qonaqui Atyrau" 
+                            class="w-full h-32 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-900 text-lg leading-tight">DIAR Qonaqui Atyrau</h3>
+                            <div class="flex items-center justify-between mt-2">
+                                <!-- Звезды рейтинга -->
+                                <div class="flex text-yellow-400 space-x-0.5">
+                                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26l6.91 1.01l-5 4.88l1.18 6.88L12 18l-6.18 3.24l1.18-6.88l-5-4.88l6.91-1.01L12 2z"/></svg>
+                                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26l6.91 1.01l-5 4.88l1.18 6.88L12 18l-6.18 3.24l1.18-6.88l-5-4.88l6.91-1.01L12 2z"/></svg>
+                                    <svg class="w-5 h-5 text-gray-300 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26l6.91 1.01l-5 4.88l1.18 6.88L12 18l-6.18 3.24l1.18-6.88l-5-4.88l6.91-1.01L12 2z"/></svg>
+                                    <svg class="w-5 h-5 text-gray-300 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26l6.91 1.01l-5 4.88l1.18 6.88L12 18l-6.18 3.24l1.18-6.88l-5-4.88l6.91-1.01L12 2z"/></svg>
+                                    <svg class="w-5 h-5 text-gray-300 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26l6.91 1.01l-5 4.88l1.18 6.88L12 18l-6.18 3.24l1.18-6.88l-5-4.88l6.91-1.01L12 2z"/></svg>
+                                </div>
+                                <span class="text-sm text-gray-500">2.84/5.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <script src="/static/js/hoteldashboard.js"></script>
+</body>
+</html>
