@@ -1,44 +1,15 @@
-<!DOCTYPE html>
-<html lang="ru">
+{% extends "incloud/base.html" %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ары-бері по городам</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/static/css/ari-beri.css">
+{% block css %}
+    <link href="{% static 'incloud/css/ari-beri.css' %}" rel="stylesheet">
+    <link href="{% static 'incloud/css/index.css' %}" rel="stylesheet">
+{% endblock %}
 
-</head>
-
-<body>
-
+{% block content %}
     <!-- Шапка и поисковая секция (синий фон) -->
-    <header class="bg-blue-500 pt-10 pb-20 shadow-lg">
+    <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-24 mb-16">
         <div class="container mx-auto px-4">
-            <!-- Added navigation bar with logo and links -->
-            <nav class="flex justify-between items-center mb-6">
-                <a href="index.html" class="text-white text-2xl font-bold flex items-center">
-                    <img src="/static/img/Logo.png" alt="InCloud Logo" class="h-8 object-contain mr-2">
-                    InCloud
-                </a>
-                <div class="hidden md:flex items-center space-x-6 text-white text-sm font-medium">
-                    <a href="index.html" class="hover:text-gray-200 transition">Отели</a>
-                    <a href="ari-beri.html" class="hover:text-gray-200 transition">Ары-бері</a>
-                    <a href="favorites1.html" class="hover:text-gray-200 transition">Избранное</a>
-                    <a href="tickets.html" class="hover:text-gray-200 transition">Горящие цены</a>
-                    <a href="support.html" class="hover:text-gray-200 transition">Поддержка</a>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <a href="notification.html" class="text-white hover:text-gray-200">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                        </svg>
-                    </a>
-                    <a href="profile.html" class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-blue-600 font-medium">
-                        К
-                    </a>
-                </div>
-            </nav>
 
             <h1 class="text-white text-3xl md:text-4xl font-extrabold text-center mb-1">
                 «Ары-бері» по городам
@@ -268,101 +239,84 @@
             </div>
         </div>
     </main>
+{% endblock %}
 
-    <!-- Футер -->
-    <footer class="bg-white pt-10 pb-16 mt-12 md:mt-20 border-t border-gray-200">
-        <div class="container mx-auto px-4">
-            <!-- Секции ссылок -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
-
-                <!-- Авиакомпании -->
-                <div>
-                    <h4 class="font-semibold text-gray-900 mb-4">Авиакомпании</h4>
-                    <ul class="space-y-2 text-gray-600">
-                        <li><a href="#" class="hover:text-blue-500 transition">Азимут</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition">Победа</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition">Россия</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition">S7 Airlines</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition">Air Cairo</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition">еще 6 авиакомпаний</a></li>
-                    </ul>
-                </div>
-
-                <!-- Направления -->
-                <div>
-                    <h4 class="font-semibold text-gray-900 mb-4">Направления</h4>
-                    <ul class="space-y-2 text-gray-600">
-                        <li><a href="#" class="hover:text-blue-500 transition">Астана - Алматы</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition">Шымкент - Астана</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition">Актобе - Алматы</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition">Атырау - Тараз</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition">Караганда - Алматы</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition">Уральск - Костанай</a></li>
-                    </ul>
-                </div>
-
-                <!-- Города -->
-                <div>
-                    <h4 class="font-semibold text-gray-900 mb-4">Города</h4>
-                    <ul class="space-y-2 text-gray-600">
-                        <li><a href="#" class="hover:text-blue-500 transition">Атырау</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition">Алматы</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition">Актобе</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition">Актау</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition">Астана</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition">еще 6 городов</a></li>
-                    </ul>
-                </div>
-
-                <!-- Помощь и советы -->
-                <div>
-                    <h4 class="font-semibold text-gray-900 mb-4">Помощь и советы</h4>
-                    <ul class="space-y-2 text-gray-600">
-                        <li><a href="#" class="hover:text-blue-500 transition">Не пришел билет</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition">Возврат или обмен билета</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition">Про багаж</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition">Изменение паспортных данных</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Разделитель -->
-            <div class="border-t border-gray-200 my-8"></div>
-
-            <!-- Footer bottom -->
-            <div class="flex items-center justify-between px-8 py-6">
-
-                <!-- Left: Logo + name + years -->
-                <div class="flex items-center space-x-3">
-                    <a href="index.html">
-                        <img src="/static/img/Logo.png" alt="InCloud Logo" class="h-8 w-8" />
-                    </a>
-
-                    <div class="flex flex-col leading-tight">
-                        <span class="text-ncloud-text-dark font-bold text-sm">
-                            Инклауд
-                        </span>
-                        <span class="text-ncloud-text-gray font-bold text-xs">
-                            2019–2025
-                        </span>
+    {% block footer %}
+        <!-- Footer Links Section -->
+        <footer class="bg-white border-t border-gray-100 pt-10 pb-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-6 gap-8 text-sm">
+                    <div>
+                        <h4 class="font-bold mb-3">Отели</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><a href="{% url 'incloud:ari_beri' %}">Поиск отелей</a></li>
+                            <li><a href="{% url 'incloud:ari_beri' %}">Хостелы</a></li>
+                            <li><a href="{% url 'incloud:ari_beri' %}">Апартаменты</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-3">События</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><a href="#">Концерты</a></li>
+                            <li><a href="#">Выставки</a></li>
+                            <li><a href="#">Фестивали</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-3">Помощь</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><a href="{% url 'incloud:support' %}">FAQ</a></li>
+                            <li><a href="{% url 'incloud:support' %}">Контакты</a></li>
+                            <li><a href="{% url 'incloud:support' %}">Поддержка</a></li>
+                        </ul>
+                    </div>
+                    <!-- This section covers the last two columns on desktop -->
+                    <div class="col-span-2">
+                        <h4 class="font-bold mb-3">Популярные направления</h4>
+                        <!-- The image shows dropdowns with placeholder content. -->
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                            <select class="p-2 border rounded-lg text-gray-700 w-full">
+                                <option>Азия</option>
+                                <option>Европа</option>
+                            </select>
+                            <select class="p-2 border rounded-lg text-gray-700 w-full">
+                                <option>Россия</option>
+                                <option>США</option>
+                            </select>
+                            <select class="p-2 border rounded-lg text-gray-700 w-full">
+                                <option>Аэропорт</option>
+                                <option>Город</option>
+                            </select>
+                            <select class="p-2 border rounded-lg text-gray-700 w-full">
+                                <option>Город</option>
+                            </select>
+                            <select class="p-2 border rounded-lg text-gray-700 w-full">
+                                <option>Страна</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Right: Links -->
-                <div class="flex flex-col text-right space-y-1">
-                    <a href="support.html" class="text-ncloud-text-dark font-bold text-sm hover:underline">
-                        Об Инклауд
-                    </a>
-                    <a href="support.html" class="text-ncloud-text-dark font-bold text-sm hover:underline">
-                        Пресс-центр
-                    </a>
+                <div
+                    class="mt-12 flex flex-col sm:flex-row justify-between items-center border-t pt-6 text-xs text-gray-500">
+                    <div class="flex space-x-4 mb-4 sm:mb-0">
+                        <p>© 2024 RCloud</p>
+                        <a href="#" class="hover:text-blue-600">Политика конфиденциальности</a>
+                        <a href="#" class="hover:text-blue-600">Условия использования</a>
+                    </div>
+                    <div class="flex space-x-3 items-center">
+                        <!-- Social icons placeholder -->
+                        <div class="w-6 h-6 bg-gray-200 rounded-full flex items-center justify-center">F</div>
+                        <div class="w-6 h-6 bg-gray-200 rounded-full flex items-center justify-center">T</div>
+                    </div>
                 </div>
-
             </div>
-        </div>
-    </footer>
+        </footer>
+    {% endblock %}
 
-    <script src="/static/js/ai-beri.js"></script>
+    {% block js %}
+        <script src="{% static 'incloud/js/ai-beri.js' %}"></script>
+    {% endblock %}
 </body>
 
 </html>

@@ -1,9 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/profile.css">
+    <link rel="stylesheet" href="{% static 'profile/css/profile.css' %}">
     <title>InCloud - Профиль</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -17,7 +18,7 @@
             <!-- Added link to logo -->
             <a href="index.html" class="logo">
                 <img 
-                    src="/static/img/Logo.png" 
+                    src="{% static 'profile/img/Logo.png' %}" 
                     alt="iCloud Logo" 
                     class="logo-img"
                     onerror="this.onerror=null; this.src='C:\Users\elmir\Downloads\Frame 5.png';" 

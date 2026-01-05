@@ -1,33 +1,68 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/favorites1.css">
+    <link rel="stylesheet" href="{% static 'favorites/css/favorites2.css' %}">
     <title>Избранное</title>
-   
 </head>
 <body>
 
-    <!-- НОВАЯ СИНЯЯ ШАПКА -->
-    <div class="top-header-bar">
-        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
-            <a href="index.html" class="flex items-center">
-                <img src="/static/img/Logo.png" alt="InCloud Logo" class="h-8 object-contain">
-            </a>
-            <nav class="hidden md:flex items-center space-x-6 text-white text-sm font-medium">
-                <a href="index.html" class="hover:text-gray-200">Отели</a>
-                <a href="ari-beri.html" class="hover:text-gray-200">Ары-бері</a>
-                <a href="favorites1.html" class="hover:text-gray-200">Избранное</a>
-                <a href="tickets.html" class="hover:text-gray-200">Горящие цены</a>
-            </nav>
-            <div class="flex items-center space-x-4">
-                <a href="notification.html" class="text-white"><i class="fas fa-bell"></i></a>
-                <a href="profile.html" class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-blue-600 font-medium">К</a>
+    <div class="top-header-bar"></div> <!-- СИНЯЯ ШАПКА -->
+    
+    <!-- МОДАЛЬНОЕ ОКНО - располагается над основным контентом -->
+    <div class="modal-overlay">
+        <!-- Секция подписки на цену и сам макет письма -->
+        <div class="email-mockup">
+            <div class="email-header">
+                <div class="email-logo-title">
+                    <img src="/static/img/Logo.png" alt="InCloud Logo" class="h-6 w-6 rounded-md">
+                    <span>incloud.kz</span>
+                </div>
+                <div class="email-flight-info">
+                    Бишкек — Пауэн
+                </div>
+            </div>
+            
+            <div class="price-status-badge">
+                Подешевел!
+            </div>
+            
+            <div class="current-price">
+                32 652 ТГ
+            </div>
+
+            <button class="buy-button">
+                Билетті көрсету (Посмотреть билет)
+            </button>
+            
+            <div class="ticket-details">
+                <div class="details-title">
+                    Ұшу туралы ақпарат
+                </div>
+                <div class="route-info">
+                    <span class="city">Астана</span>
+                    <span class="time">07:00 – 07:35</span>
+                    <span class="city">Баку</span>
+                </div>
+                <div class="route-path">
+                    Баку 1 сағ. 45 мин.
+                </div>
+                <div class="route-info">
+                    <span class="city">Алматы</span>
+                    <span class="time">10:00 – 10:45</span>
+                    <span class="city">Ташкент</span>
+                </div>
+                <div class="route-path">
+                    Ташкент
+                </div>
             </div>
         </div>
     </div>
-    
+
+
+    <!-- ОСНОВНАЯ СТРАНИЦА - СДЕЛАНА ПОЛУПРОЗРАЧНОЙ, чтобы имитировать фон -->
     <main class="favorites-page">
         <h1 class="main-title">Избранное</h1>
 
@@ -44,24 +79,17 @@
             </div>
         </section>
 
-        <!-- Блок подписки на изменение цены -->
-        <section class="price-notification-block">
-            <div class="price-text">
-                Как только цена изменится, мы пришлём
+        <!-- ТЕКСТ ПОДПИСКИ (Оставлен здесь, чтобы быть частью контента) -->
+        <div style="margin-bottom: 50px; padding-bottom: 20px; border-bottom: 1px solid #f0f0f0;">
+             <div style="display: flex; gap: 30px; align-items: flex-start;">
+                <div style="display: flex; flex-direction: column; gap: 15px; font-size: 16px; color: #666; min-width: 200px;">
+                    <span>Как только цена изменится, мы пришлём:</span>
+                    <div style="font-weight: 500; color: #333;">Уведомление</div>
+                    <div style="font-weight: 500; color: #333;">Пример нашего письма</div>
+                </div>
             </div>
-            <div class="notification-box">
-                Уведомление
-            </div>
-            <div class="email-example">
-                Пример нашего письма
-            </div>
-        </section>
-
-        <p class="login-prompt">
-            <a href="login.html">Войдите в профиль,</a>
-            если вы уже что-то сохранили
-        </p>
-
+        </div>
+        
         <!-- Блок с направлениями (выпадающие списки) -->
         <section class="directions-list">
             <div class="direction-item">
@@ -187,26 +215,35 @@
                 </div>
             </div>
 
-            <div class="copyright-section">
-                <!-- Логотип и Копирайт -->
-                <div class="flex flex-col leading-tight">
-                    <a href="index.html">
-                        <img src="/static/img/Logo.png" alt="InCloud Logo" class="h-6 w-6 rounded-md">
-                    </a>
-                    <span class="text-ncloud-text-dark font-bold text-lg"> <b>Инклауд</b></span>
-                    <span class="text-ncloud-text-gray text-sm"><b>2019-2025</b></span>
-                </div>
+    <!-- Left: Logo + name + years -->
+    <div class="flex items-center space-x-3">
+        <img
+            src="/static/img/Logo.png"
+            alt="InCloud Logo"
+            class="h-8 w-8"
+        />
 
-                <div class="flex flex-col text-right space-y-1">
-                    <a href="support.html" class="text-ncloud-text-dark font-bold text-lg hover:underline"><b>Об Инклауд</b></a>
-                    <a href="support.html" class="text-ncloud-text-dark font-bold text-lg hover:underline"><b>Пресс-центр</b></a>
-                </div>
-            </div>
+        <div class="flex flex-col leading-tight">
+            <span class="text-ncloud-text-dark font-bold text-sm">
+                Инклауд
+            </span>
+            <span class="text-ncloud-text-gray font-bold text-xs">
+                2019–2025
+            </span>
+        </div>
+    </div>
 
-            <!-- Нижнее юридическое уведомление -->
-            <div class="legal-notice">
-                <b>Мы используем куки и аналогичные технологии – без них Авиасейлс просто не сможет нормально работать</b>
-            </div>
+    <!-- Right: Links -->
+    <div class="flex flex-col text-right space-y-1">
+        <span class="text-ncloud-text-dark font-bold text-sm">
+            Об Инклауд
+        </span>
+        <span class="text-ncloud-text-dark font-bold text-sm">
+            Пресс-центр
+        </span>
+    </div>
+
+</div>
         </footer>
 
     </main>

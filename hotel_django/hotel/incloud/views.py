@@ -7,9 +7,6 @@ def index(request):
 def ari_beri(request):
     return render(request, 'incloud/ari_beri.html')
 
-def ari_beri_search(request):
-    return render(request, 'incloud/ari_beri_search.html')
-
 def demalys(request):
     return render(request, 'incloud/demalys.html')
 

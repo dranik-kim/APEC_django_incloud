@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -6,7 +7,7 @@
     <title>DoubleTree by Hilton Almaty</title>
     <!-- Загрузка Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/static/css/hoteldashboard.css">
+    <link rel="stylesheet" href="{% static 'profiles/css/hoteldashboard.css' %}">
     
 </head>
 <body class="bg-gray-50">
@@ -26,10 +27,10 @@
                 
                 <!-- Added link to logo -->
                 <a href="index.html" class="flex items-center space-x-2">
-                    <img src="/static/img/Logo.png" 
+                    <img src="{% static 'profiles/img/Logo.png' %}" 
                          alt="INCloud Logo" 
                          class="h-6 object-contain"
-                         onerror="this.onerror=null; this.src='/static/img/Logo.png'">
+                         onerror="this.onerror=null; this.src='{% static 'profiles/img/Logo.png' %}'">
                 </a>
             </div>
             
@@ -287,6 +288,6 @@
             </div>
         </div>
     </main>
-    <script src="/static/js/hoteldashboard.js"></script>
+    <script src="{% static 'profiles/js/hoteldashboard.js' %}"></script>
 </body>
 </html>

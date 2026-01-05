@@ -1,9 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/tickets.css">
+    <link rel="stylesheet" href="{% static 'support/css/tickets.css' %}">
     <title>Горячие цены на отели</title>
     <!-- Загрузка Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -19,7 +20,7 @@
             <div class="flex justify-between items-center h-16">
                 <!-- Логотип (Белый текст) -->
                 <div class="flex items-center space-x-8">
-                    <img src="/static/img/Logo.png" alt="Logo" class="h-8 w-auto">
+                    <img src="{% static 'support/img/Logo.png' %}" alt="Logo" class="h-8 w-auto">
                 </div>
                 
                 <!-- Профиль и настройки (Белые иконки) -->

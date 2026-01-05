@@ -10,5 +10,3 @@ def notifications(request):
 def profile(request):
     return render(request, 'profiles/profile.html')
 
-def profile_alt(request):
-    return render(request, 'profiles/profile2.html')
