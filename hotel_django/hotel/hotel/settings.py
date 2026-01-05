@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users',
     'incloud',
-    'profile',
+    'profiles',
     'support',
     'favorites',
 ]

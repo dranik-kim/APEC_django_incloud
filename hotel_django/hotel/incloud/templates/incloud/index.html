@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -9,7 +10,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Use Inter font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <link href="/static/css/index.css" rel="stylesheet">
+    <link href="{% static 'incloud/css/index.css' %}" rel="stylesheet">
 </head>
 
 <body>
@@ -19,31 +20,31 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Main Nav (Top-left, Top-center, Top-right elements) -->
             <nav class="flex justify-between items-center mb-8">
-                <a class="text-white text-2xl font-bold" href="index.html">
-                    <span class="mr-1"><img src="/static/img/Logo.png" alt="INCloud Logo" class="h-7 object-contain"
-                            onerror="this.onerror=null; this.src='/static/img/Logo.png'"></span>
+                <a class="text-white text-2xl font-bold" href="{% url 'incloud:index' %}">
+                    <span class="mr-1"><img src="{% static 'incloud/img/Logo.png' %}" alt="INCloud Logo" class="h-7 object-contain"
+                            onerror="this.onerror=null; this.src='{% static 'incloud/img/Logo.png' %}'"></span>
                 </a>
                 <!-- Added navigation menu for all pages -->
                 <div class="hidden lg:flex items-center space-x-6 text-white text-sm font-medium">
-                    <a href="index.html" class="hover:text-gray-200 transition">Главная</a>
-                    <a href="ari-beri.html" class="hover:text-gray-200 transition">Билеты</a>
-                    <a href="favorites1.html" class="hover:text-gray-200 transition">Избранное</a>
-                    <a href="tickets.html" class="hover:text-gray-200 transition">Горящие цены</a>
-                    <a href="support.html" class="hover:text-gray-200 transition">Поддержка</a>
+                    <a href="{% url 'incloud:index' %}" class="hover:text-gray-200 transition">Главная</a>
+                    <a href="{% url 'support:tickets' %}" class="hover:text-gray-200 transition">Билеты</a>
+                    <a href="{% url 'favorites:favorites1' %}" class="hover:text-gray-200 transition">Избранное</a>
+                    <a href="{% url 'support:tickets' %}" class="hover:text-gray-200 transition">Горящие цены</a>
+                    <a href="{% url 'incloud:support' %}" class="hover:text-gray-200 transition">Поддержка</a>
                 </div>
                 <!-- Title: Удобный поиск билетов - Increased size to text-4xl and font to font-extrabold -->
                 <div class="text-4xl font-extrabold text-white hidden md:block">
                     Удобный поиск билетов
                 </div>
                 <div class="flex items-center space-x-4 text-white">
-                    <a href="notification.html">
+                    <a href="{% url 'profiles:notifications' %}">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
                         </svg>
                     </a>
-                    <a href="profile.html"
+                    <a href="{% url 'profiles:profile' %}"
                         class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-blue-600 font-medium">
                         К
                     </a>
@@ -54,21 +55,21 @@
             <div class="flex justify-center mb-12">
                 <div class="bg-blue-700 p-2 rounded-xl flex items-center shadow-lg">
                     <!-- Tab 1: Отели (Active) -->
-                    <a href="index.html"
+                    <a href="{% url 'incloud:index' %}"
                         class="search-tab-active flex items-center px-4 py-2 rounded-xl font-semibold text-base transition duration-150">
                         <span class="mr-2">
                             <img src="https://cdn-icons-png.flaticon.com/128/9627/9627816.png" class="w-5 h-5">
                         </span> Отели
                     </a>
                     <!-- Tab 2: Ары-бері (Inactive) -->
-                    <a href="ari-beri.html"
+                    <a href="{% url 'incloud:ari_beri' %}"
                         class="text-white flex items-center p-3 px-6 rounded-xl font-medium text-base transition duration-150 opacity-80 hover:opacity-100">
                         <span class="mr-2">
                             <img src="https://cdn-icons-png.flaticon.com/128/8987/8987829.png" class="w-5 h-5">
                         </span> Ары-бері
                     </a>
                     <!-- Tab 3: Избранное (Inactive) -->
-                    <a href="favorites1.html"
+                    <a href="{% url 'favorites:favorites1' %}"
                         class="text-white flex items-center p-3 px-6 rounded-xl font-medium text-base transition duration-150 opacity-80 hover:opacity-100">
                         <span class="mr-2">
                             <img src="https://cdn-icons-png.flaticon.com/128/8016/8016964.png" class="w-5 h-5">
@@ -132,7 +133,7 @@
                     </div>
 
                     <!-- Submit Button -->
-                    <button type="button" onclick="window.location.href='ari-beri-search.html'"
+                    <button type="button" onclick="window.location.href='{% url 'incloud:ari_beri_search' %}'"
                         class="w-full md:w-auto py-4 px-8 bg-orange-500 text-white font-semibold hover:bg-orange-600 transition duration-150 shadow-md md:rounded-r-xl rounded-b-xl md:rounded-bl-none">
                         Найти отели
                     </button>
@@ -149,7 +150,7 @@
             <!-- Card 1: Горящие цены -->
             <div class="bg-white rounded-xl shadow-lg p-4 border border-gray-100 lg:col-span-2">
                 <h2 class="text-xl font-bold mb-3">
-                    <a href="tickets.html" class="hover:underline text-blue-600">Горящие цены</a>
+                    <a href="{% url 'support:tickets' %}" class="hover:underline text-blue-600">Горящие цены</a>
                 </h2>                
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <!-- Item 1 -->
@@ -213,7 +214,7 @@
                     <p class="text-sm text-gray-700 mb-4">
                         Получайте подборку самых выгодных предложений и лучшие цены на авиабилеты.
                     </p>
-                    <a href="demalys.html"
+                    <a href="{% url 'incloud:demalys' %}"
                         class="bg-blue-600 text-white py-2 px-4 rounded-full text-sm font-semibold hover:bg-blue-700 transition duration-150">
                         Подписаться
                     </a>
@@ -268,7 +269,7 @@
                 </div>
             </div>
             <div class="text-center mt-6">
-                <a href="ari-beri.html"
+                <a href="{% url 'incloud:ari_beri' %}"
                     class="text-blue-600 font-medium hover:text-blue-800 transition duration-150 border-b border-blue-600 pb-1">Посмотреть
                     все отели</a>
             </div>
@@ -403,9 +404,9 @@
                 <div>
                     <h4 class="font-bold mb-3">Отели</h4>
                     <ul class="space-y-2 text-gray-600">
-                        <li><a href="ari-beri.html">Поиск отелей</a></li>
-                        <li><a href="hoteldashboard.html">Хостелы</a></li>
-                        <li><a href="hoteldashboard.html">Апартаменты</a></li>
+                        <li><a href="{% url 'incloud:ari_beri' %}">Поиск отелей</a></li>
+                        <li><a href="{% url 'incloud:ari_beri' %}">Хостелы</a></li>
+                        <li><a href="{% url 'incloud:ari_beri' %}">Апартаменты</a></li>
                     </ul>
                 </div>
                 <div>
@@ -419,9 +420,9 @@
                 <div>
                     <h4 class="font-bold mb-3">Помощь</h4>
                     <ul class="space-y-2 text-gray-600">
-                        <li><a href="support.html">FAQ</a></li>
-                        <li><a href="support.html">Контакты</a></li>
-                        <li><a href="support.html">Поддержка</a></li>
+                        <li><a href="{% url 'incloud:support' %}">FAQ</a></li>
+                        <li><a href="{% url 'incloud:support' %}">Контакты</a></li>
+                        <li><a href="{% url 'incloud:support' %}">Поддержка</a></li>
                     </ul>
                 </div>
                 <!-- This section covers the last two columns on desktop -->
