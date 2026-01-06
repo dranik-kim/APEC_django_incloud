@@ -1,59 +1,89 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/profile.css">
+    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
     <title>InCloud - Профиль</title>
-    
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
 </head>
 <body>
 
+    <!-- Шапка -->
     <header class="header">
         <div class="container header-content">
-            <!-- Added link to logo -->
-            <a href="index.html" class="logo">
-                <img 
-                    src="/static/img/Logo.png" 
-                    alt="iCloud Logo" 
-                    class="logo-img"
-                    onerror="this.onerror=null; this.src='C:\Users\elmir\Downloads\Frame 5.png';" 
-                >
+            <a href="{% url 'incloud:index' %}" class="logo">
+                <img src="{% static 'profiles/img/Logo.png' %}" alt="InCloud Logo" class="logo-img">
             </a>
-
-            <!-- Updated navigation links -->
             <nav class="main-nav">
-                <a href="index.html" class="nav-item"><i class="fas fa-hotel"></i> Отели</a>
-                <a href="ari-beri.html" class="nav-item"><i class="fas fa-plane"></i> Ары-бері</a>
-                <a href="favorites1.html" class="nav-item"><i class="fas fa-heart"></i> Избранное</a>
-                <a href="tickets.html" class="nav-item"><i class="fas fa-fire"></i> Горящие цены</a>
+                <a href="{% url 'incloud:index' %}" class="nav-item"><i class="fas fa-hotel"></i> Отели</a>
+                <a href="{% url 'incloud:ari_beri' %}" class="nav-item"><i class="fas fa-plane"></i> Ары-бері</a>
+                <a href="{% url 'favorites:favorites' %}" class="nav-item"><i class="fas fa-heart"></i> Избранное</a>
+                <a href="{% url 'support:tickets' %}" class="nav-item"><i class="fas fa-fire"></i> Горящие цены</a>
             </nav>
             <div class="user-info">
-                <a href="profile.html" class="user-link active">Профиль</a>
+                <a href="{% url 'profiles:profile' %}" class="user-link active">Профиль</a>
                 <a href="#" class="lang-link">КК/RU</a>
             </div>
         </div>
     </header>
 
+    <!-- Основной контент -->
     <main class="profile-main">
-        <div class="container"> 
+        <div class="container">
             <div class="profile-grid">
-                
+
+                <!-- Левая навигация -->
                 <aside class="profile-nav-menu">
-                    <!-- Updated nav links -->
-                    <a href="profile.html" class="nav-link active">
+                    <a href="{% url 'profiles:profile' %}" class="nav-link active">
                         <i class="fas fa-cog"></i> Настройки
                     </a>
-                    <a href="notification.html" class="nav-link">
+                    <a href="{% url 'profiles:notifications' %}" class="nav-link">
                         <i class="fas fa-bell"></i> Уведомления
                     </a>
                 </aside>
 
+                <!-- Правая колонка контента -->
                 <section class="profile-content">
 
+                    {% if user.is_authenticated %}
+                    <!-- Динамическая информация для авторизованного пользователя -->
+                    <div class="content-block login-block">
+                        <h3>{{ user.first_name }} {{ user.last_name }}</h3>
+                        <p>{{ user.email }}</p>
+                    </div>
+
+                    <!-- Пример динамических данных: недавние покупки -->
+                    <div class="content-block recent-purchases">
+                        <h3>Недавние покупки</h3>
+                        {% if user.orders.exists %}
+                            {% for order in user.orders.all %}
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Страна</label>
+                                    <div class="input-with-icon">
+                                        <span class="input-value">{{ order.country }}</span>
+                                        <i class="fas fa-angle-down"></i>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Город</label>
+                                    <div class="input-with-icon">
+                                        <span class="input-value">{{ order.city }}</span>
+                                        <i class="fas fa-angle-down"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        {% else %}
+                            <p>У вас пока нет покупок.</p>
+                        {% endif %}
+                    </div>
+
+                    {% else %}
+                    <!-- Блок для неавторизованных пользователей -->
                     <div class="content-block login-block">
                         <div class="login-info">
                             <h3>Войдите в профиль</h3>
@@ -62,55 +92,18 @@
                         <div class="social-login">
                             <button class="social-btn google-btn"><i class="fab fa-google"></i> Войти через Google</button>
                             <button class="social-btn facebook-btn"><i class="fab fa-facebook"></i> Facebook</button>
-                            <button class="social-btn more-btn" onclick="window.location.href='login.html'"><i class="fas fa-plus"></i> Еще 4 способа</button>
+                            <button class="social-btn more-btn" onclick="window.location.href='{% url 'users:login' %}'"> <i class="fas fa-plus"></i> Еще 4 способа</button>
+
                             <div class="register-link-group">
                                 <input type="checkbox" id="subscribe-news">
-                                <label for="subscribe-news">Подписка на рассылку iCloud</label>
+                                <label for="subscribe-news">Подписка на рассылку InCloud</label>
                                 <a href="#">Условия подписки</a>
                             </div>
                         </div>
                     </div>
+                    {% endif %}
 
-                    <div class="content-block recent-purchases">
-                        <h3>Недавние покупки</h3>
-                        <p>Нужны для отображения подходящих билетов и правил въезда в страну</p>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="country">Страна</label>
-                                <div class="input-with-icon">
-                                    <span class="input-value">Казахстан</span>
-                                    <i class="fas fa-angle-down"></i>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="citizenship">Гражданство</label>
-                                <div class="input-with-icon">
-                                    <span class="input-value">Казахстан</span>
-                                    <i class="fas fa-angle-down"></i>
-                                    <i class="fas fa-info-circle info-icon"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="currency">Валюта</label>
-                                <div class="input-with-icon">
-                                    <span class="input-value">Казахстанский тенге</span>
-                                    <i class="fas fa-angle-down"></i>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="city">Город проживания</label>
-                                <div class="input-with-icon">
-                                    <span class="input-value"></span>
-                                    <i class="fas fa-angle-down"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                    <!-- Тема оформления -->
                     <div class="content-block theme-settings">
                         <div class="theme-title">
                             <i class="fas fa-sun"></i> <span>Тема оформления</span>
@@ -121,11 +114,12 @@
                         </div>
                     </div>
 
+                    <!-- Конфиденциальность и документы -->
                     <div class="privacy-docs">
                         <div class="section-group">
                             <h4 class="section-heading">Конфиденциальность</h4>
                             <div class="section-description">Данные</div>
-                            <a href="support.html" class="setting-link">
+                            <a href="{% url 'incloud:support' %}" class="setting-link">
                                 Отчет с моими данными <i class="fas fa-chevron-right"></i>
                             </a>
                             <a href="#" class="setting-link danger">
@@ -135,14 +129,15 @@
 
                         <div class="section-group">
                             <h4 class="section-heading">Документы</h4>
-                            <a href="support.html" class="setting-link">
+                            <a href="{% url 'incloud:support' %}" class="setting-link">
                                 Политика конфиденциальности <i class="fas fa-chevron-right"></i>
                             </a>
-                            <a href="support.html" class="setting-link">
+                            <a href="{% url 'incloud:support' %}" class="setting-link">
                                 Лицензионное соглашение <i class="fas fa-chevron-right"></i>
                             </a>
                         </div>
                     </div>
+
                 </section>
             </div>
         </div>

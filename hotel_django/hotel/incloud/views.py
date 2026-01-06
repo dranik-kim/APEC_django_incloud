@@ -1,20 +1,50 @@
 from django.shortcuts import render
+from django.db.models import Q
+from .models import Hotel
 
-# Create your views here.
+
 def index(request):
-    return render(request, 'incloud/index.html')
+    top_hotels = Hotel.objects.order_by('-rating')[:3]
+
+    context = {
+        'title': 'InCloud - С нами просто!',
+        'top_hotels': top_hotels
+    }
+    return render(request, 'incloud/index.html', context)
+
 
 def ari_beri(request):
-    return render(request, 'incloud/ari_beri.html')
+    query = request.GET.get('q', '')  # Получаем строку поиска
+    hotels = Hotel.objects.all()
 
-def ari_beri_search(request):
-    return render(request, 'incloud/ari_beri_search.html')
+    if query:
+        hotels = hotels.filter(
+            Q(name__icontains=query) | 
+            Q(city__icontains=query) | 
+            Q(country__icontains=query)
+        )
+
+    context = {
+        'title': 'InCloud - Ары Берi по городам',
+        'hotels': hotels,
+        'query': query,
+    }
+    return render(request, 'incloud/ari_beri.html', context)
 
 def demalys(request):
-    return render(request, 'incloud/demalys.html')
+    context = {
+        'title': 'InCloud - Демалыс по умному!',
+    }
+    return render(request, 'incloud/demalys.html', context)
 
 def vacancies(request):
-    return render(request, 'incloud/vacancies.html')
+    context = {
+        'title': 'Вакансии: Станьте частью InCloud',
+    }
+    return render(request, 'incloud/vacancies.html', context)
 
 def support(request):
-    return render(request, 'incloud/support.html')
+    context = {
+        'title': 'Техподдержка InCloud',
+    }
+    return render(request, 'incloud/support.html', context)

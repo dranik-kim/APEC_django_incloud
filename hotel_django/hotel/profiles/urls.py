@@ -7,5 +7,4 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard'),
     path('notifications/', views.notifications, name='notifications'),
     path('profile/', views.profile, name='profile'),
-    path('profile/alt/', views.profile_alt, name='profile_alt'),
 ]

@@ -1,13 +1,14 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demalys - Обзор Путешествий</title>
+    <title>{{ title }}</title>
     <!-- Подключение Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Настройка шрифта Inter и кастомных цветов -->
-    <link rel="stylesheet" href="/static/css/demalys.css">
+    <link rel="stylesheet" href="{% static 'incloud/css/demalys.css' %}">
    
 </head>
 <body class="min-h-screen">
@@ -17,7 +18,7 @@
         <header class="flex justify-between items-center mb-10">
             <div class="text-lg font-bold text-gray-800">
                 <span class="text-blue-600">demalys</span>
-                <img src="/static/img/Logo.png" alt="Logo" class="inline-block w-6 h-6 ml-1">
+                <img src="{% static 'incloud/img/Logo.png' %}" alt="Logo" class="inline-block w-6 h-6 ml-1">
             </div>
             <nav class="flex space-x-2 p-2 bg-white rounded-full shadow-lg border border-gray-100">
                 <button class="nav-button nav-button-active flex items-center px-4 py-2 rounded-full text-sm">
@@ -272,7 +273,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
             
             <div class="flex items-center space-x-2 mb-4 md:mb-0">
-                <img src="/static/img/Logo.png" alt="InCloud Logo" class="h-6 w-6 rounded-md">
+                <img src="{% static 'incloud/img/Logo.png' %}" alt="InCloud Logo" class="h-6 w-6 rounded-md">
                 <div class="text-gray-700">
                     <span class="font-bold text-lg">InCloud</span><br>
                     <span class="text-sm">2016-2025</span>

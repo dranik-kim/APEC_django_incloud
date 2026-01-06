@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Избранное</title>
+  <link rel="stylesheet" href="{% static 'favorites/css/favorites1.css' %}">
+</head>
+<body>
+
+  <!-- --- Шапка --- -->
+  <div class="top-header-bar">
+    <div>
+      <a href="{% url 'incloud:index' %}"><img src="{% static 'favorites/img/Logo.png' %}" alt="Логотип"></a>
+      <nav>
+        <a href="{% url 'incloud:index' %}">Главная</a>
+        <a href="{% url 'favorites:favorites' %}">Избранное</a>
+        <a href="{% url 'profiles:profile' %}">Профиль</a>
+      </nav>
+      <div class="flex items-center space-x-4">
+        {% if user.is_authenticated %}
+          <a href="{% url 'profiles:profile' %}">{{ user.username|slice:":1"|upper }}</a>
+        {% else %}
+          <a href="{% url 'users:login_view' %}">Войти</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- --- Контент страницы --- -->
+  <div class="favorites-page">
+    <h1 class="main-title">Избранное</h1>
+
+    {% if user.is_authenticated %}
+      <!-- --- Информационные карточки --- -->
+      <div class="info-search-block">
+        <div class="info-card">
+          <h2>Ваши любимые направления</h2>
+          <ul>
+            {% for item in user.favorites.all %}
+              <li>{{ item.name }} - {{ item.city }}</li>
+            {% empty %}
+              <li>Вы пока не добавили ни одного направления.</li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="search-tip">
+          <p>Попробуйте поискать новые направления:</p>
+          <div class="search-example-box">
+            <form method="get" action="/search/">
+              <input type="text" name="q" placeholder="Город, страна..." style="width:100%; padding:8px; border-radius:8px; border:1px solid #ccc;">
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="price-notification-block">
+        <div class="price-text">
+          Подпишитесь на уведомления о снижении цен для ваших любимых направлений
+        </div>
+        <div class="notification-box">Включить уведомления</div>
+        <div class="email-example">{{ user.email }}</div>
+      </div>
+
+      <div class="directions-list">
+        {% for item in user.favorites.all %}
+        <div class="direction-item">
+          <div class="select-label">{{ item.city }}</div>
+          <div class="select-box">{{ item.name }}</div>
+          <div class="dropdown-arrow"></div>
+        </div>
+        {% empty %}
+          <p>Вы пока не добавили направления в избранное.</p>
+        {% endfor %}
+      </div>
+
+    {% else %}
+      <div class="login-prompt">
+        Чтобы использовать избранное и подписки, <a href="/login/">войдите в аккаунт</a>.
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- --- Футер --- -->
+  <footer class="site-footer">
+    <div class="footer-links">
+      <div class="footer-column">
+        <h4 class="column-title">Компания</h4>
+        <ul>
+          <li>О нас</li>
+          <li>Контакты</li>
+          <li>Карьера</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4 class="column-title">Помощь</h4>
+        <ul>
+          <li>FAQ</li>
+          <li>Поддержка</li>
+          <li>Бронирование</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4 class="column-title">Соцсети</h4>
+        <ul>
+          <li>Facebook</li>
+          <li>Instagram</li>
+          <li>Telegram</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4 class="column-title">Правовая информация</h4>
+        <ul>
+          <li>Политика конфиденциальности</li>
+          <li>Условия использования</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4 class="column-title">Дополнительно</h4>
+        <ul>
+          <li>Новости</li>
+          <li>Блог</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="copyright-section">
+      <div class="logo-text-block">
+        <div class="logo-text">In<span class="logo-icon">Cloud</span></div>
+      </div>
+      <div class="about-us">
+        <span>© 2026 InCloud</span>
+        <span>Все права защищены</span>
+      </div>
+    </div>
+
+    <div class="legal-notice">
+      Использование сайта означает согласие с условиями и политикой конфиденциальности.
+    </div>
+  </footer>
+
+</body>
+</html>

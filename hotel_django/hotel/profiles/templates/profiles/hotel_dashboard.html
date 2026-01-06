@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -6,7 +7,7 @@
     <title>DoubleTree by Hilton Almaty</title>
     <!-- Загрузка Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/static/css/hoteldashboard.css">
+    <link rel="stylesheet" href="{% static 'profiles/css/hoteldashboard.css' %}">
     
 </head>
 <body class="bg-gray-50">
@@ -17,7 +18,7 @@
             <!-- Левая часть: Стрелка "Назад" и Логотип INCloud -->
             <div class="flex items-center space-x-2">
                 <!-- Updated back button to navigate to search page -->
-                <button aria-label="Назад" class="p-1 rounded-full hover:bg-blue-700 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-white" onclick="window.location.href='ari-beri-search.html'">
+                <button aria-label="Назад" class="p-1 rounded-full hover:bg-blue-700 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-white" onclick="window.location.href={% url 'incloud:ari_beri'%}">
                     <!-- Heroicon: Arrow Left -->
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
@@ -25,16 +26,16 @@
                 </button>
                 
                 <!-- Added link to logo -->
-                <a href="index.html" class="flex items-center space-x-2">
-                    <img src="/static/img/Logo.png" 
+                <a href="{% url 'incloud:index' %}" class="flex items-center space-x-2">
+                    <img src="{% static 'profiles/img/Logo.png' %}" 
                          alt="INCloud Logo" 
                          class="h-6 object-contain"
-                         onerror="this.onerror=null; this.src='/static/img/Logo.png'">
+                         onerror="this.onerror=null; this.src='{% static 'profiles/img/Logo.png' %}'">
                 </a>
             </div>
             
             <!-- Профиль -->
-            <div class="flex items-center space-x-2 cursor-pointer hover:bg-blue-600 p-1 rounded-full transition-colors duration-150" onclick="window.location.href='profile.html'">
+            <div class="flex items-center space-x-2 cursor-pointer hover:bg-blue-600 p-1 rounded-full transition-colors duration-150" onclick="window.location.href={% url 'profiles:profile' %}">
                 <img src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?cs=srgb&dl=pexels-creationhill-1681010.jpg&fm=jpg" alt="Профиль" class="rounded-full ring-2 ring-white w-8 h-8 object-cover">
                 <span class="hidden sm:inline font-medium">Профиль</span>
             </div>
@@ -287,6 +288,6 @@
             </div>
         </div>
     </main>
-    <script src="/static/js/hoteldashboard.js"></script>
+    <script src="{% static 'profiles/js/hoteldashboard.js' %}"></script>
 </body>
 </html>

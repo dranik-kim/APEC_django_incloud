@@ -1,11 +1,11 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/vacancies.css">
-    <title>Наши Вакансии - InCloud</title>
+    <link rel="stylesheet" href="{% static 'incloud/css/vacancies.css' %}">
+    <title>{{ title }}</title>
     <!-- Загрузка Tailwind CSS CDN --><script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Подключение шрифта Inter из Google Fonts --><link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
         <div class="flex items-center space-x-6">
             <!-- Логотип NCloud -->
             <div class="flex items-center space-x-2">
-                <img src="/static/img/Logo.png" alt="InCloud Logo" class="h-8 w-8 rounded-md">
+                <img src="{% static 'incloud/img/Logo.png' %}" alt="InCloud Logo" class="h-8 w-8 rounded-md">
             </div>
             <!-- Ссылки в шапке -->
             <div class="hidden sm:flex space-x-4">
@@ -285,7 +285,7 @@
             <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0 text-center sm:text-left">
                 <!-- Логотип и Копирайт -->
                 <div class="flex items-center space-x-2">
-                    <img src="/static/img/Logo.png" alt="InCloud Logo" class="h-6 w-6 rounded-md">
+                    <img src="{% static 'incloud/img/Logo.png' %}" alt="InCloud Logo" class="h-6 w-6 rounded-md">
                     <span class="text-ncloud-text-dark font-bold text-lg">Инклауд</span>
                     <span class="text-ncloud-text-gray text-sm">2019-2025</span>
                 </div>
@@ -298,6 +298,6 @@
 
         </div>
     </footer>
-    <script src="/static/js/vacancies.js"></script>
+    <script src="{% static 'incloud/js/vacancies.js' %}"></script>
 </body>
 </html>

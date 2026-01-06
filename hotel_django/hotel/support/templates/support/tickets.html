@@ -1,9 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/tickets.css">
+    <link rel="stylesheet" href="{% static 'support/css/tickets.css' %}">
     <title>Горячие цены на отели</title>
     <!-- Загрузка Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -19,7 +20,7 @@
             <div class="flex justify-between items-center h-16">
                 <!-- Логотип (Белый текст) -->
                 <div class="flex items-center space-x-8">
-                    <img src="/static/img/Logo.png" alt="Logo" class="h-8 w-auto">
+                    <img src="{% static 'support/img/Logo.png' %}" alt="Logo" class="h-8 w-auto">
                 </div>
                 
                 <!-- Профиль и настройки (Белые иконки) -->
@@ -67,7 +68,7 @@
                     </button>
                     
                     <!-- Неактивные кнопки (Белый текст на Синем фоне) -->
-                    <a href="ari-beri.html" class="flex items-center space-x-1 px-4 py-2 text-white/80 hover:bg-white/10 rounded-full transition duration-200 ease-in-out">
+                    <a href="{% url 'incloud:ari_beri' %}" class="flex items-center space-x-1 px-4 py-2 text-white/80 hover:bg-white/10 rounded-full transition duration-200 ease-in-out">
                         <!-- Иконка самолета -->
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
@@ -75,7 +76,7 @@
                         <span>Ары-Бери</span>
                     </a>                    
                     
-                    <a href="favorites1.html" class="flex items-center space-x-1 px-4 py-2 text-white/80 hover:bg-white/10 rounded-full transition duration-200 ease-in-out">
+                    <a href="{% url 'favorites:favorites' %}" class="flex items-center space-x-1 px-4 py-2 text-white/80 hover:bg-white/10 rounded-full transition duration-200 ease-in-out">
                         <!-- Иконка избранного -->
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
@@ -159,7 +160,7 @@
                 <div class="space-y-4">
                     <div class="flex justify-between items-center">
                         <h2 class="text-xl font-bold text-gray-900">Астана</h2>
-                        <a href="ari-beri-search.html" class="text-blue-700 text-sm font-medium hover:underline">Больше отелей</a>
+                        <a href="{% url 'incloud:ari_beri' %}" class="text-blue-700 text-sm font-medium hover:underline">Больше отелей</a>
                     </div>
                     
                     <!-- Карточка отеля: Астана -->
@@ -196,7 +197,7 @@
                 <div class="space-y-4">
                     <div class="flex justify-between items-center">
                         <h2 class="text-xl font-bold text-gray-900">Стамбул</h2>
-                        <a href="ari-beri-search.html" class="text-blue-700 text-sm font-medium hover:underline">Больше отелей</a>
+                        <a href="{% url 'incloud:ari_beri' %}" class="text-blue-700 text-sm font-medium hover:underline">Больше отелей</a>
                     </div>
                     
                     <!-- Карточка отеля: Стамбул -->
